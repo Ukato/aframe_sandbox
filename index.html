@@ -30,50 +30,170 @@
   <a-scene>
     <!-- Asset Management System -->
     <a-assets>
-      <img id="asphaltDock-NRM" src="textures/Ground/TexturesCom_AsphaltDock_2x2_1K_normal.jpg">
-      <img id="stoneCladding-NRM" src="textures/Ground/TexturesCom_Brick_StoneCladding8_512_normal.jpg">
-      <img id="mudCracked-NRM" src="textures/Ground/TexturesCom_Ground_MudCracked_1K_normal.jpg">
-      <img id="grassBlock-NRM" src="textures/Ground/TexturesCom_Pavement_GrassBlock_1K_normal.jpg">
-      <img id="paintedConcrete-NRM" src="textures/Ground/TexturesCom_Pavement_PaintedConcrete11_512_normal.jpg">
-      <img id="slateHexagon-NRM" src="textures/Ground/TexturesCom_Pavement_SlateHexagon_1K_normal.jpg">
-      <img id="scifiFloor-NRM" src="textures/Ground/TexturesCom_Scifi_Floor2_1K_normal.jpg">
-      <img id="streetCobblestone-NRM" src="textures/Ground/TexturesCom_StreetCobblestone7_2.2x2.2_1K_normal.jpg">
-      <img id="cementHexagonal-NRM" src="textures/Ground/TexturesCom_Tiles_CementHexagonal_1K_normal.jpg">
-      <img id="slabRed-NRM" src="textures/Random/TexturesCom_Marble_SlabRed_1K_normal.jpg">
-      <img id="asteroid-NRM" src="textures/Random/TexturesCom_Rock_Asteroid_1K_normal.jpg">
-      <img id="solarCells-NRM" src="textures/Random/TexturesCom_SolarCells_1K_normal.jpg">
-      <img id="toiletPaper-NRM" src="textures/Random/TexturesCom_Various_ToiletPaper_512_normal.jpg">
-      <img id="vinylMembrane-NRM" src="textures/Roof/TexturesCom_Roofing_VinylMembrane_1K_normal.jpg">
-      <img id="stoneCladding4-NRM" src="textures/Wall/TexturesCom_Brick_StoneCladding4_1K_normal.jpg">
-      <img id="metalCorrugated-NRM" src="textures/Wall/TexturesCom_Metal_Corrugated_1K_normal.jpg">
-      <img id="paintChipped-NRM" src="textures/Wall/TexturesCom_Paint_Chipped_2K_normal.jpg">
-      <img id="paintRough-NRM" src="textures/Wall/TexturesCom_Paint_Rough_1K_normal.jpg">
-      <img id="plasterPainted-NRM" src="textures/Wall/TexturesCom_Plaster_Painted_1K_normal.jpg">
-      <img id="tilesDecorative-NRM" src="textures/Wall/TexturesCom_Tiles_Decorative_1K_normal.jpg">
-    </a-assets>
 
-    <!-- Box Primitive | Green Wall -->
-    <a-box color="#689f38"
-           width="10"
-           height="3"
-           depth="0.5"
-           position="0 0 7">
-    </a-box>
+			<!-- Ground Texture -->
+      <!-- Scifi Panel -->
+      <img id="scifiPanel" src="textures/Ground/TexturesCom_Scifi_Panel_4K_albedo.jpg">
+      <img id="scifiPanel-NRM" src="textures/Ground/TexturesCom_Scifi_Panel_4K_normal.jpg">
+      <!-- Scifi Panel 2 -->
+      <img id="scifiPanel2" src="textures/Ground/TexturesCom_Scifi_Panel2_1K_albedo.jpg">
+      <img id="scifiPanel2-NRM" src="textures/Ground/TexturesCom_Scifi_Panel2_1K_normal.jpg">
+      <!-- Scifi Panel 8 -->
+      <img id="scifiPanel8" src="textures/Ground/TexturesCom_Scifi_Panel8_1K_albedo.jpg">
+      <img id="scifiPanel8-NRM" src="textures/Ground/TexturesCom_Scifi_Panel8_1K_normal.jpg">
+      <!-- Scifi Pattern -->
+      <img id="scifiPattern" src="textures/Ground/TexturesCom_Scifi_Pattern_1K_albedo.jpg">
+      <img id="scifiPattern-NRM" src="textures/Ground/TexturesCom_Scifi_Pattern_1K_normal.jpg">
+
+			<!-- Skyboxes -->
+			<img id="sunny-sky" src="images/skyboxes/clear-sunny-sky.jpg">
+			<img id="blocks" src="images/skyboxes/360_blocks.jpg">
+			<img id="tiles" src="images/skyboxes/360_tiles.jpg">
+
+			<!-- Images -->
+			<img id="home-default" src="images/home-1350x900-flat.jpg">
+			<img id="home-curved" src="images/home-1350x900-curved.jpg">
+			<img id="home-curved-r" src="images/home-1350x900-curved-layout-r.jpg">
+			<img id="home-curved-c" src="images/home-1350x900-curved-layout-c.jpg">
+      <img id="home-curved-l" src="images/home-1350x900-curved-layout-l.jpg">
+      
+      <!-- Item Textures -->
+      <!-- Modern Brick Wall -->
+      <img id="brickWall" src="textures/Wall/TexturesCom_Brick_Modern_1K_albedo.jpg">
+      <img id="brickWall-NRM" src="textures/Wall/TexturesCom_Brick_Modern_1K_normal.jpg">
+      <!-- Toilet Paper -->
+      <img id="toiletPaper" src="textures/Random/TexturesCom_Various_ToiletPaper_512_albedo.jpg">
+      <img id="toiletPaper-NRM" src="textures/Random/TexturesCom_Various_ToiletPaper_512_normal.jpg">
+      <!-- Mercury -->
+      <img id="mercury" src="textures/Planets/8k_mercury.jpg">
+		</a-assets>
+
+		<a-entity position="0 0 1">
+			<a-camera></a-camera>
+		</a-entity>
+		
+		<!-- Ground -->
+		<a-plane material="color: #FFF;
+											 src: #scifiPanel;
+											 repeat: 25 25;
+											 normal-map: #scifiPanel-NRM;
+											 normal-texture-repeat: 25 25;
+                       roughness: 0.4;"
+             position="-12.5 0 -12.5"
+						 rotation="-90 90 0"
+						 scale="25 25 0">
+    </a-plane>
+    <a-plane material="color: #FFF;
+											 src: #scifiPanel2;
+											 repeat: 25 25;
+											 normal-map: #scifiPanel2-NRM;
+											 normal-texture-repeat: 25 25;
+                        roughness: 0.4;"
+             position="12.5 0 -12.5"
+						 rotation="-90 90 0"
+						 scale="25 25 0">
+    </a-plane>
+    <a-plane material="color: #FFF;
+											 src: #scifiPanel8;
+											 repeat: 50 50;
+											 normal-map: #scifiPanel8-NRM;
+											 normal-texture-repeat: 50 50;
+                       roughness: 0.4;"
+             position="-12.5 0 12.5"
+						 rotation="-90 90 0"
+						 scale="25 25 0">
+    </a-plane>
+    <a-plane material="color: #FFF;
+											 src: #scifiPattern;
+											 repeat: 50 50;
+											 normal-map: #scifiPattern-NRM;
+											 normal-texture-repeat: 50 50;
+                       roughness: 0.4;"
+             position="12.5 0 12.5"
+						 rotation="-90 90 0"
+						 scale="25 25 0">
+		</a-plane>
+
+		<!-- Skybox -->
+		<a-sky material="src: #mercury;
+										 repeat: 1 1;"
+					 radius="100"
+					 side="double">
+		</a-sky>
+
+    <!-- Box Primitive | Brick Wall -->
+    <a-box position="0 1.5 7"
+           width="10" height="3" depth="0.2"
+           material="src: #brickWall;
+                     repeat: 5 1.5;
+                     normal-map: #brickWall-NRM;
+                     normal-texture-repeat: 5 1.5;
+                     roughness: 0.8">
+		</a-box>
+		
+		<!-- Flat Image -->
+		<a-image src="#home-default"
+						 position="-15 1.5 -3"
+						 width="1" height="0.666"
+						 scale="3 3 1">
+		</a-image>
+
+		<!-- Curved Image -->
+		<a-curvedimage src="#home-curved"
+									 theta-length="90"
+									 theta-start="135"
+									 radius="0.707"
+									 height="0.7406"
+									 position="-15 1.5 0"
+									 scale="3 3 3">
+		</a-curvedimage>
+
+		<!-- Curved Image | 3-IMG Layout -->
+		<a-curvedimage src="#home-curved-r"
+									 theta-length="50"
+									 theta-start="90"
+									 radius="0.5"
+									 height="0.2906"
+									 position="-15 1.5 0"
+									 scale="3 3 3">
+		</a-curvedimage>
+		<a-curvedimage src="#home-curved-c"
+									 theta-length="50"
+									 theta-start="155"
+									 radius="0.5"
+									 height="0.2906"
+									 position="-15 1.5 0"
+									 scale="3 3 3">
+		</a-curvedimage>
+		<a-curvedimage src="#home-curved-l"
+									 theta-length="50"
+									 theta-start="220"
+									 radius="0.5"
+									 height="0.2906"
+									 position="-15 1.5 0"
+									 scale="3 3 3">
+		</a-curvedimage>
+
+		<a-box color="#AA0000"
+					 opacity="0.5"
+					 width="3" height="0.1" depth="3"
+					 position="-15 1.5 -1.5">
+		</a-box>
 
     <!-- Toilet Paper Roll -->
-    <a-cylinder position="40 1.5 -12"
-                height="10"
-                radius="5"
+    <a-cylinder position="22 2 -12"
+                height="4"
+                radius="2"
                 color="#FFF"
-                src="textures/Random/TexturesCom_Various_ToiletPaper_512_albedo.jpg"
+                src="#toiletPaper"
                 normal-map="#toiletPaper-NRM"
-                normal-map-repeat="5 5"
+                normal-texture-repeat="4 4"
                 normal-scale="1 -1"
                 roughness="0.8">
     </a-cylinder>
 
     <!-- Cylinder Primitive | Left -->
-    <a-cylinder position="-1 0 -1"
+    <a-cylinder position="-1 1 -1"
                 color="#5C5C5C"
                 height="0.2"
                 radius="0.5"
@@ -85,7 +205,7 @@
     </a-cylinder>
 
     <!-- Cylinder Primitive | Center -->
-    <a-cylinder position="0 0.25 -1.5"
+    <a-cylinder position="0 1.25 -1.5"
                 color="#14213D"
                 height="0.2"
                 radius="0.5"
@@ -95,16 +215,24 @@
                 scale="1 1 1">
     </a-cylinder>
 
-    <!-- Cylinder Primitive | Right -->
-    <a-cylinder position="2 0.5 -2"
+    <!-- Cylinder Primitive | Rotating Upper Right -->
+    <a-cylinder position="2 1.5 -2"
                 color="#FCA311"
                 height="0.2"
                 radius="0.5"
                 segments-radial="6"
                 side="double"
                 rotation="0 0 90"
-                scale="1 1 1">
-    </a-cylinder>
+								scale="1 1 1">
+								<a-animation attribute="rotation"
+														 to="0 360 0"
+														 repeat="indefinite"
+														 dur="5000"
+														 easing="linear">
+								</a-animation>
+		</a-cylinder>
+		
+
 
     <!-- Box 16:9 Panel | Parent Entity -->
     <a-box color="#FAD02C"
@@ -144,188 +272,6 @@
                      color="#533E2D"
                      side="double">
            </a-circle>
-    </a-box>
-
-    <!-- Material Boxes -->
-    <!-- Front Row -->
-    <a-box position="-2 -2 -12" 
-           width="4" height="4" depth="4" 
-           src="textures/Random/TexturesCom_Rock_Asteroid_1K_albedo.jpg"
-           repeat="1 1"
-           normal-map="#asteroid-NRM"
-           normal-texture-repeat="1 1"
-           normal-scale="1 -1"
-           roughness="0.8">
-    </a-box>
-
-    <a-box position="2 -2 -12" 
-           width="4" 
-           height="4" 
-           depth="4" 
-           src="textures/Random/TexturesCom_SolarCells_1K_albedo.jpg"
-           repeat="1 1"
-           normal-map="#solarCells-NRM"
-           normal-texture-repeat="1 1"
-           normal-scale="1 -1"
-           roughness="0.3">
-    </a-box>
-
-    <!-- Row 1 -->
-    <a-box position="-4 -1 -20" width="4" height="4" depth="4" src="textures/Ground/TexturesCom_Asphalt8_1x1_1K_albedo.jpg"></a-box>
-
-    <a-box position="-12 -1 -20" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_AsphaltDock_2x2_1K_albedo.jpg" 
-           normal-map="#asphaltDock-NRM"
-           normal-scale="1 -1"
-           roughness="0.75">
-    </a-box>
-
-    <a-box position="-20 -1 -20" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_Brick_StoneCladding8_512_albedo.jpg"
-           normal-map="#stoneCladding-NRM"
-           normal-scale="1 -1"
-           roughness="0.75">
-    </a-box>
-
-    <a-box position="4 -1 -20" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_FloorsMixedSize0024_1_M.jpg">
-    </a-box>
-
-    <a-box position="12 -1 -20" width="4" height="4" depth="4" 
-           rotation="0 0 90"
-           src="textures/Ground/TexturesCom_FloorStreets0074_1_seamless_S.jpg">
-    </a-box>
-
-    <a-box position="20 -1 -20" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_GravelCobble0031_M.jpg">
-    </a-box>
-
-    <!-- Row 2 -->
-    <a-box position="-4 -1 -28" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_Ground_MudCracked_1K_albedo.jpg"
-           normal-map="#mudCracked-NRM"
-           normal-scale="1 -1"
-           roughness="0.6">
-    </a-box>
-
-    <a-box position="-12 -1 -28" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_Pavement_GrassBlock_1K_albedo.jpg"
-           normal-map="#grassBlock-NRM"
-           normal-scale="1 -1"
-           roughness="0.5">
-    </a-box>
-
-    <a-box position="-20 -1 -28" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_Pavement_PaintedConcrete11_1K_albedo.jpg"
-           normal-map="#paintedConcrete-NRM"
-           normal-scale="1 -1"
-           roughness="0.4">
-    </a-box>
-
-    <a-box position="4 -1 -28" 
-           width="4" 
-           height="4" 
-           depth="4" 
-           src="textures/Ground/TexturesCom_MetalFloorsBare0021_1_seamless_S.jpg"
-           repeat="4 4"
-           roughness="0.4">
-    </a-box>
-
-    <a-box position="12 -1 -28" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_Pavement_SlateHexagon_1K_albedo.jpg"
-           normal-map="#slateHexagon-NRM"
-           normal-scale="1 -1"
-           roughness="0.4">
-    </a-box>
-
-    <a-box position="20 -1 -28" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_Scifi_Floor2_1K_albedo.jpg"
-           normal-map="#scifiFloor-NRM"
-           normal-scale="1 -1"
-           roughness="0.35">
-    </a-box>
-
-    <!-- Row 3 -->
-    <a-box position="-4 -1 -36" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_StreetCobblestone7_2.2x2.2_1K_albedo.jpg"
-           normal-map="#streetCobblestone-NRM"
-           normal-scale="1 -1"
-           roughness="0.6">
-    </a-box>
-
-    <a-box position="-12 -1 -36" width="4" height="4" depth="4" 
-           src="textures/Ground/TexturesCom_Tiles_CementHexagonal_1K_albedo.jpg"
-           normal-map="#cementHexagonal-NRM"
-           normal-scale="1 -1"
-           roughness="0.45">
-    </a-box>
-
-    <a-box position="-20 -1 -36" width="4" height="4" depth="4" 
-           src="textures/Wall/TexturesCom_Brick_Modern_1K_albedo.jpg">
-    </a-box>
-
-    <a-box position="4 -1 -36" width="4" height="4" depth="4" 
-           src="textures/Wall/TexturesCom_Brick_StoneCladding4_1K_albedo.jpg"
-           normal-map="#stoneCladding4-NRM"
-           normal-scale="1 -1"
-           roughness="0.6">
-    </a-box>
-
-    <a-box position="12 -1 -36" width="4" height="4" depth="4" 
-           src="textures/Wall/TexturesCom_Metal_Corrugated_1K_albedo.jpg"
-           normal-map="#metalCorrugated-NRM"
-           normal-scale="1 -1"
-           roughness="0.5">
-    </a-box>
-
-    <a-box position="20 -1 -36" width="4" height="4" depth="4" 
-           src="textures/Wall/TexturesCom_Paint_Chipped_2K_albedo.jpg"
-           normal-map="#paintChipped-NRM"
-           normal-scale="1 -1"
-           roughness="0.4">
-    </a-box>
-
-    <!-- Row 4 -->
-    <a-box position="-4 -1 -44" width="4" height="4" depth="4" 
-           src="textures/Wall/TexturesCom_Paint_Rough_1K_albedo.jpg"
-           normal-map="#paintRough-NRM"
-           normal-scale="1 -1"
-           roughness="0.6">
-    </a-box>
-
-    <a-box position="-12 -1 -44" width="4" height="4" depth="4" 
-           src="textures/Wall/TexturesCom_Plaster_Painted_1K_albedo.jpg"
-           normal-map="#plasterPainted-NRM"
-           normal-scale="1 -1"
-           roughness="0.5">
-    </a-box>
-
-    <a-box position="-20 -1 -44" width="4" height="4" depth="4" 
-           src="textures/Random/TexturesCom_Various_ToiletPaper_512_albedo.jpg"
-           normal-map="#toiletPaper-NRM"
-           normal-scale="1 -1"
-           roughness="0.9">
-    </a-box>
-
-    <a-box position="4 -1 -44" width="4" height="4" depth="4" 
-           src="textures/Wall/TexturesCom_Tiles_Decorative_1K_albedo.jpg"
-           normal-map="#tilesDecorative-NRM"
-           normal-scale="1 -1"
-           roughness="0.5">
-    </a-box>
-
-    <a-box position="12 -1 -44" width="4" height="4" depth="4" 
-           src="textures/Roof/TexturesCom_Roofing_VinylMembrane_1K_albedo.jpg"
-           normal-map="#vinylMembrane-NRM"
-           normal-scale="1 -1"
-           roughness="0.35">
-    </a-box>
-
-    <a-box position="20 -1 -44" width="4" height="4" depth="4" 
-           src="textures/Random/TexturesCom_Marble_SlabRed_1K_albedo.jpg"
-           normal-map="#slabRed-NRM"
-           normal-scale="1 -1"
-           roughness="0.3">
     </a-box>
 
   </a-scene>
